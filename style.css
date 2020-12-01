@@ -1,0 +1,125 @@
+@font-face {
+    font-family: 'inconsolata';
+    src: url('fonts/Inconsolata-Regular.ttf');
+}
+
+@keyframes blinking {
+    0% {
+      opacity: 100%;
+    }
+    50% {
+      opacity: 100%;
+    }
+    100% {
+      opacity: 0%;
+    }
+}
+
+.terminal {
+    overflow: auto;
+    background-color: #1d2021; /*black;*/
+    box-shadow: 10px 10px 10px gray;
+    color: white;
+    font-family: 'inconsolata', monospace;
+    font-size: 0.7em;
+    padding: 2px 15px; 
+    border-radius: 20px; 
+    height: 70vh;
+}
+.terminal pre{
+    font-size: 0.65em;
+}
+
+.terminal a {
+    color: #fabd2f; /*yellow;*/
+}
+
+.cursor {
+    animation: blinking 1s infinite;
+}
+
+.prompt {
+    width: 20%;
+    color: lime ;
+}
+
+.highlight, .hl {
+    font-weight: bold;
+    color: #fabd2f; /*yellow;*/
+}
+
+.center {
+    text-align: center;
+}
+
+input[type="radio"] {
+    font-size: 1.3em;
+    margin: 10px;
+    z-index: 2;
+}
+
+#x {
+    display:none; 
+    font-family: 'inconsolata', monospace;
+    border-radius: 20px;
+    position: absolute; 
+    width: 80%; 
+    background-color: #2E2E2E; 
+    color: white;
+    padding: 10px 0; 
+    margin: 30px 10%;
+    filter: blur(0);
+}
+
+#x .option {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+#x .option:hover {
+    background-color: #3E3E3E; 
+}
+
+.blureado {
+  filter: blur(8px);
+}
+
+#contact {
+    max-height: 20px;
+    height: 1.5em;
+    text-align: right;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+#contact a {
+    text-decoration: none;
+    margin: 0 5px;
+}
+#contact img {
+    height: 100%;
+}
+
+#language {
+    font-size: 1.5em;
+    font-family: helvetica, sans;
+    color: black;
+}
+
+@media only screen and (min-width: 799px) {
+    .terminal {
+        font-size: 1.3em;
+        width: 90%;
+        margin: 5px auto;
+        height: 90vh;
+    }
+    
+    .terminal pre {
+        font-size: 0.9em;
+    }
+        
+}
+
