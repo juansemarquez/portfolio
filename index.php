@@ -1,3 +1,10 @@
+<?php
+require_once 'stats.php';
+$ref = isset( $_SERVER['HTTP_REFERER']) ?  $_SERVER['HTTP_REFERER'] : null;
+$ua = $_SERVER['HTTP_USER_AGENT'];
+stats($_SERVER['REMOTE_ADDR'], $ref,
+      $ua , gethostbyaddr($ua));
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -54,7 +61,7 @@
             </pre>
             
             <p class="hl center"><a href="JuanMarquez-cv.pdf" onclick="event.stopPropagation();">Download CV</a> -
-            <a href="es.html" onclick="event.stopPropagation();">Spanish Version</a></p>
+            <a href="es.php" onclick="event.stopPropagation();">Spanish Version</a></p>
             <p class="commandLine"><span class="prompt">visitor@juansemarquez:~</span> 
             <noscript>
                 <span class="hl">(This site requires javascript - won't work)</span>
@@ -64,7 +71,7 @@
             </span></p>
           </div>
           <div id="contact">
-            <a href="es.html" id="language">
+            <a href="es.php" id="language">
                 <strong>ES</strong>
             </a>
             <a href="mailto:juanse@juansemarquez.com">

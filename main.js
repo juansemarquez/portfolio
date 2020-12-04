@@ -6,6 +6,18 @@ window.onload = function() {
     // }
 }
 
+function commandStats(comm) {
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+       if(this.readyState == 4 && this.status == 200) {
+           console.log(this.responseText);
+       }
+    };
+    request.open("POST","commandstats.php", true);
+    request.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    request.send("command="+comm);
+}
+
 function showSelectOfCommands() {
     // Opens radio buttons for selecting command on mobile devices.
     document.getElementById("terminal").classList.add('blureado');
@@ -61,6 +73,8 @@ function keypressing(event)
 function command(c) {
     // Receive a command and execute it.
 
+
+    commandStats(c);
     // Find the last command in terminal, remove it as "current command" and
     // add it as an already executed command:
     let last_command = document.querySelectorAll('.commandLine');
@@ -99,6 +113,7 @@ function command(c) {
 
     //Scroll to the end of the terminal:
     term.scrollTop = term.scrollHeight;
+
 }
 
 function commandResponse(c) {

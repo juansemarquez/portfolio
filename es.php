@@ -1,3 +1,10 @@
+<?php
+require_once 'stats.php';
+$ref = isset( $_SERVER['HTTP_REFERER']) ?  $_SERVER['HTTP_REFERER'] : null;
+$ua = $_SERVER['HTTP_USER_AGENT'];
+stats($_SERVER['REMOTE_ADDR'], $ref,
+      $ua , gethostbyaddr($ua));
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -53,7 +60,7 @@
           ver los comandos disponibles)       888
             </pre>
             <p class="hl center"><a href="JuanMarquez-cv.pdf" onclick="event.stopPropagation();">Descargar CV</a> -
-            <a href="index.html" onclick="event.stopPropagation();">English Version</a></p>
+            <a href="index.php" onclick="event.stopPropagation();">English Version</a></p>
             <p class="commandLine"><span class="prompt">visitas@juansemarquez:~</span> 
             <noscript>
                 <span class="hl">(Este sitio requiere javascript - no va a funcionar)</span>
@@ -63,7 +70,7 @@
             </span></p>
           </div>
           <div id="contact">
-            <a href="index.html" id="language">
+            <a href="index.php" id="language">
                 <strong>EN</strong>
             </a>
             <a href="mailto:juanse@juansemarquez.com">
