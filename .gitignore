@@ -1,4 +1,5 @@
 *.odt
-JuanMarquez-cv.pdf
+*.pdf
+*.txt
 .connect.php
 datos.php

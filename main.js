@@ -1,9 +1,5 @@
 window.onload = function() {
-    // If we are on a narrow screen, show radio buttons to choose commands when
-    // the user clicks or taps on the terminal.
-    //if (window.innerWidth < 900) {
        document.querySelector('.terminal').addEventListener('click', showSelectOfCommands);
-    // }
 }
 
 function commandStats(comm) {

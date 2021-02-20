@@ -9,6 +9,7 @@ stats($_SERVER['REMOTE_ADDR'], $ref,
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="description" content="Software developer, Information Systems Engineer, and  teacher on IT-related courses. Currently looking for a position as a developer. PHP / Python. Native Spanish and fluent English.">
         <meta name="viewport" content="width=device-width">
         <title>Juan Marquez - Software developer</title>
         <link rel="stylesheet" href="style.css" type="text/css">
