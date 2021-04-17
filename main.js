@@ -140,6 +140,10 @@ function commandResponse(c) {
         case 'contact':
             text = contact();
             break;
+        case 'b':
+        case 'blog':
+            text = blog();
+            break;
         case 'q':
         case 'quotes':
             text = quotes();
@@ -209,11 +213,13 @@ function git() {
 }
 
 function printable() {
-    let text = "My CV should start downloading now. ";
-    text += '(It works on my machine ¯\\_(ツ)_/¯ )<br>';
-    text += " If it doesn't, you can <a href='JuanMarquez-cv.pdf' onclick='event.stopPropagation();'>";
-    text += "download it by clicking here</a>.";
-    window.location.href = 'JuanMarquez-cv.pdf';
+    //let text = "My CV should start downloading now. ";
+    //text += '(It works on my machine ¯\\_(ツ)_/¯ )<br>';
+    let text = "Since I'm not currently looking for a job, my CV is not ";
+    text += "available. If you need info, you can ";
+    text += "<a onclick='event.stopPropagation(); command(\"contact\")'>contact ";
+    text += "me</a>.";
+    //window.location.href = 'JuanMarquez-cv.pdf';
     return text;
 }
 
@@ -222,8 +228,8 @@ function cv() {
     text += "<strong class='hl'>software developer</strong> based in Rosario, ";
     text += "Argentina.<br>";
 
-    text += "I've been teaching IT-related subjects for the last 10 years, and";
-    text += " I'm currently <strong class='hl'>looking for a position as a ";
+    text += "I've been teaching IT-related subjects for the last 10 years."; //, and";
+    text += " I'm currently <strong class='hl'>working as a PHP ";
     text += "developer</strong>.<br>";
 
     text += "I have a degree on <strong class='hl'>Information Systems ";
@@ -239,16 +245,14 @@ function cv() {
     text += "onclick=\"event.stopPropagation();executeFromSelect('teaching')\">";
     text += "visit my online courses</a>. <br>";
 
-    text += "Need more info? Check <a href='JuanMarquez-cv.pdf' onclick='event.stopPropagation();'>";
-    text += "my complete cv</a>.";
+    //text += "Need more info? Check <a href='JuanMarquez-cv.pdf' onclick='event.stopPropagation();'>";
+    // text += "my complete cv</a>.";
 
     return text;
 }
 
 function contact() {
     let text = "<span class='hl'>Contact me!</span><br>";
-    text += "- Send me an email: <a href='mailto: juanse@juansemarquez.com'>";
-    text += "juanse@juansemarquez.com</a><br>";
 
     text += "- Find me on Twitter as ";
     text += "<a href='https://twitter.com/profejuanse' onclick='event.stopPropagation();'>";
@@ -262,6 +266,12 @@ function contact() {
     text += "<a href='https://github.com/juansemarquez' onclick='event.stopPropagation();'>";
     text += "on GitHub</a><br>";
 
+    return text;
+}
+
+function blog() {
+    let text = '<span class="hl">My blog</span><br>';
+    text += "<a href='blog' onclick='event.stopPropagation();'>Let's see what you've written...</a>";
     return text;
 }
 

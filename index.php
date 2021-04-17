@@ -1,15 +1,21 @@
 <?php
 require_once 'stats.php';
-$ref = isset( $_SERVER['HTTP_REFERER']) ?  $_SERVER['HTTP_REFERER'] : null;
+$ref = isset($_SERVER['HTTP_REFERER']) ?  $_SERVER['HTTP_REFERER'] : null;
 $ua = $_SERVER['HTTP_USER_AGENT'];
-stats($_SERVER['REMOTE_ADDR'], $ref,
-      $ua , gethostbyaddr($ua));
+stats(
+    $_SERVER['REMOTE_ADDR'], 
+    $ref,
+    $ua, 
+    gethostbyaddr($ua)
+);
+$content = "Software developer, Information Systems Engineer, and  teacher on ";
+$content.= "IT-related courses. PHP/Python. Native Spanish and fluent English.";
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="description" content="Software developer, Information Systems Engineer, and  teacher on IT-related courses. Currently looking for a position as a developer. PHP / Python. Native Spanish and fluent English.">
+        <meta name="description" content="<?php echo $content;?>">
         <meta name="viewport" content="width=device-width">
         <title>Juan Marquez - Software developer</title>
         <link rel="stylesheet" href="style.css" type="text/css">
@@ -61,8 +67,9 @@ stats($_SERVER['REMOTE_ADDR'], $ref,
             see available commands)           888
             </pre>
             
-            <p class="hl center"><a href="JuanMarquez-cv.pdf" onclick="event.stopPropagation();">Download CV</a> -
-            <a href="es.php" onclick="event.stopPropagation();">Spanish Version</a></p>
+            <p class="hl center">
+              <a href="es.php" onclick="event.stopPropagation();">Spanish Version</a>
+            </p>
             <p class="commandLine"><span class="prompt">visitor@juansemarquez:~</span> 
             <noscript>
                 <span class="hl">(This site requires javascript - won't work)</span>
@@ -74,9 +81,6 @@ stats($_SERVER['REMOTE_ADDR'], $ref,
           <div id="contact">
             <a href="es.php" id="language">
                 <strong>ES</strong>
-            </a>
-            <a href="mailto:juanse@juansemarquez.com">
-                <img src="mail.png" alt="Mail Logo">
             </a>
             <a href="https://www.linkedin.com/in/juan-sebasti%C3%A1n-marquez-2003b91b2/">
                 <img src="linkedin.png" alt="LinkedIn Logo">

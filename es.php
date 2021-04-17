@@ -1,9 +1,8 @@
 <?php
 require_once 'stats.php';
-$ref = isset( $_SERVER['HTTP_REFERER']) ?  $_SERVER['HTTP_REFERER'] : null;
+$ref = isset($_SERVER['HTTP_REFERER']) ?  $_SERVER['HTTP_REFERER'] : null;
 $ua = $_SERVER['HTTP_USER_AGENT'];
-stats($_SERVER['REMOTE_ADDR'], $ref,
-      $ua , gethostbyaddr($ua));
+stats($_SERVER['REMOTE_ADDR'], $ref, $ua, gethostbyaddr($ua));
 ?>
 <!DOCTYPE html>
 <html>
@@ -59,8 +58,9 @@ stats($_SERVER['REMOTE_ADDR'], $ref,
            (Ingrese 'a' o 'ayuda' para        888        Software Developer
           ver los comandos disponibles)       888
             </pre>
-            <p class="hl center"><a href="JuanMarquez-cv.pdf" onclick="event.stopPropagation();">Descargar CV</a> -
-            <a href="index.php" onclick="event.stopPropagation();">English Version</a></p>
+            <p class="hl center">
+            <a href="index.php" onclick="event.stopPropagation();">English Version</a>
+            </p>
             <p class="commandLine"><span class="prompt">visitas@juansemarquez:~</span> 
             <noscript>
                 <span class="hl">(Este sitio requiere javascript - no va a funcionar)</span>
@@ -72,9 +72,6 @@ stats($_SERVER['REMOTE_ADDR'], $ref,
           <div id="contact">
             <a href="index.php" id="language">
                 <strong>EN</strong>
-            </a>
-            <a href="mailto:juanse@juansemarquez.com">
-                <img src="mail.png" alt="Mail Logo">
             </a>
             <a href="https://www.linkedin.com/in/juan-sebasti%C3%A1n-marquez-2003b91b2/">
                 <img src="linkedin.png" alt="LinkedIn Logo">
