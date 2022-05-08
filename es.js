@@ -174,6 +174,10 @@ function help() {
     text += "<span class='highlight'>o</span> - ";
     text += "Mostrar mi mail y mis perfiles de redes sociales</br>";
 
+    text += "<span class='highlight'>blog</span> o ";
+    text += "<span class='highlight'>b</span> - ";
+    text += "Muestra un enlace a mi blog personal</br>";
+
     text += "<span class='highlight'>frases</span> o ";
     text += "<span class='highlight'>f</span> - ";
     text += "Mostrar la frase del día</br>";

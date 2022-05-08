@@ -182,6 +182,10 @@ function help() {
     text += "<span class='highlight'>o</span> - ";
     text += "Shows my email and social media profile links</br>";
 
+    text += "<span class='highlight'>blog</span> or ";
+    text += "<span class='highlight'>b</span> - ";
+    text += "Shows a link to my personal blog</br>";
+
     text += "<span class='highlight'>quotes</span> or ";
     text += "<span class='highlight'>q</span> - ";
     text += "Shows a randomly-picked inspiring quote</br>";
