@@ -1,7 +1,15 @@
 <?php
 require_once 'stats.php';
 $ref = isset($_SERVER['HTTP_REFERER']) ?  $_SERVER['HTTP_REFERER'] : null;
+if (!empty($ref) && strlen($ref) > 150) {
+    $ref = substr($ref, 0, 10);
+}
+
+
 $ua = $_SERVER['HTTP_USER_AGENT'];
+if (strlen($ua) > 50) {
+    $ua = substr($ua, 0, 10);
+}
 stats(
     $_SERVER['REMOTE_ADDR'], 
     $ref,

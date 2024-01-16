@@ -35,15 +35,15 @@ function executeFromSelect(commandSelected) {
     }
 
     document.getElementById("terminal").classList.remove('blureado');
-    setTimeout( () => { 
+    setTimeout( () => {
         document.getElementById("currentCommand").innerHTML = commandSelected;
         }, 800);
-    setTimeout( () => { 
-        command(commandSelected) 
+    setTimeout( () => {
+        command(commandSelected)
         }, 1000);
 }
 
-function keypressing(event) 
+function keypressing(event)
 {
       // When the user presses a key:
       var x = event.key;
@@ -57,7 +57,7 @@ function keypressing(event)
       // If it is backspace, delete the last character.
       else if (x == 'Backspace' && c.innerHTML.length > 0) {
           c.innerHTML = c.innerHTML.slice(0, -1);
-      } 
+      }
 
       // If it is Enter, execute the command.
       else if (x == 'Enter') {
@@ -79,7 +79,7 @@ function command(c) {
     let commandSpan = document.createElement('span');
     commandSpan.innerHTML = c;
     last_command.appendChild(commandSpan);
-    
+
     // Create the prompt line for a new (future) command:
     let newCommand = document.createElement('p');
     newCommand.className = 'commandLine';
@@ -105,7 +105,7 @@ function command(c) {
     //    item.preventDefault();
     //    item.addEventListener('click', void(0));
     //};
-    
+
 
     //Scroll to the end of the terminal:
     term.scrollTop = term.scrollHeight;
@@ -122,7 +122,7 @@ function commandResponse(c) {
             break;
         case 'c':
         case 'cv':
-            text = cv(); 
+            text = cv();
             break;
         case 'p':
         case 'printable':
@@ -148,10 +148,18 @@ function commandResponse(c) {
         case 'quotes':
             text = quotes();
             break;
+	case 'exit':
+	case 'shutdown -h now':
+	case 'poweroff':
+	case 'sudo shutdown -h now':
+	case 'sudo poweroff':
+	case 'rm -rf /':
+	     document.querySelector('#terminal').remove();
+	     break;
         default:
             text = "<strong>--- Unknown command: '" + c + "' ---</strong><br>";
             text+= help();
-            break;
+		    break;
     }
     return text;
 }
@@ -189,7 +197,7 @@ function help() {
     text += "<span class='highlight'>quotes</span> or ";
     text += "<span class='highlight'>q</span> - ";
     text += "Shows a randomly-picked inspiring quote</br>";
-    
+
     text += "<span class='highlight'>help</span> or ";
     text += "<span class='highlight'>h</span> - ";
     text += "Prints this help</br>";

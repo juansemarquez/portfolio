@@ -7,6 +7,8 @@ $con = connect();
 if (is_object($con)) {
     $q = "INSERT INTO commands (command, time) ";
     $q.= "VALUES (?,?)";
+    $command = strlen($_POST['command']) > 20 ? substr($_POST['command'], 0, 20) : $_POST['command'];
+
     $data = [ $_POST['command'], $now_insert ];
     try {
         $con->beginTransaction();
